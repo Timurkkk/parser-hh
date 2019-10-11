@@ -60,9 +60,7 @@ def hh_parser(base_url,headers):
             )
     df = pd.DataFrame(jobs)
     df.to_excel('hh/{}-{} г.{}'.format(name,datetime.date.today(),'xlsx'),index=None)
-    #print(df[['title','company','money','date','region']].head(5))
     print(df['region'].value_counts().plot(kind='barh',color='red'))
-    print(df['date'].value_counts().plot(kind='line', color='blue'))
     plt.show()
     return jobs
 
